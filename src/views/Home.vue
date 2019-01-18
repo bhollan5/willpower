@@ -1,18 +1,38 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="home">
+    <router-link tag="div" id="orb" to="/dash"></router-link>
+    <h1>WILLPOWER</h1>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'home',
   components: {
-    HelloWorld
   }
 }
 </script>
+
+<style scoped lang="scss">
+@import '@/globalVars.scss';
+
+#orb {
+  width: 300px;
+  height: 300px;
+  background: $white;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition-duration: .2s;
+}
+#orb:hover {
+  transform: scale(1.1);
+}
+#home {
+  padding-top: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>
